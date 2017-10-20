@@ -7,20 +7,20 @@ RUN apk update && \
 # Clean up
 RUN rm -rf /var/cache/apk/*
 
-# Check if user sickrage exists, create it if not
+# Check if user sickrage exists, if not, create it
 RUN id sickrage || adduser -S -s /bin/false -H -D sickrage
 RUN addgroup sickrage users
 
-# Create needed directories
+# Create directories that we need
 RUN mkdir -p /config /blackhole /sorted /unsorted /app && \
     chmod 775 /config /blackhole /sorted /unsorted && \
     chgrp -R users /blackhole /unsorted /sorted
 RUN chown -R sickrage:users /config /app
 
-# Continue as user sickrage
+# Continue as user "sickrage"
 USER sickrage
   
-# Get latests sickrage version
+# Get the latest version of sickrage
 RUN git clone --depth 1 git://github.com/SickRage/SickRage.git /app
 
 VOLUME /config /blackhole /sorted /unsorted
