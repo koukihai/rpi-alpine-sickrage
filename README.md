@@ -1,4 +1,5 @@
 # rpi-alpine-sickrage
+[![Build Status](https://travis-ci.org/koukihai/rpi-alpine-sickrage.svg?branch=master)](https://travis-ci.org/koukihai/rpi-alpine-sickrage)
 
 [Sickrage](https://sickrage.github.io/) is an automatic Video Library Manager for TV Shows.  
 It watches for new episodes of your favorite shows, and when they are posted it does its magic: automatic torrent/nzb searching, downloading, and processing at the qualities you want.  
