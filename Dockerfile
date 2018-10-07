@@ -1,8 +1,11 @@
-FROM hypriot/rpi-alpine
+FROM multiarch/alpine:armhf-latest-stable
 
-# Install usefull binaries
-RUN apk update && \
-    apk --update add python git unrar zip unzip openssl py-openssl py-mako
+# Install useful binaries
+RUN apk add --update \
+	python \
+	git \
+	unrar zip unzip \
+	openssl py-openssl py-mako
 
 # Clean up
 RUN rm -rf /var/cache/apk/*
@@ -14,8 +17,8 @@ RUN addgroup sickrage users
 # Create needed directories
 RUN mkdir -p /config /blackhole /sorted /unsorted /app && \
     chmod 775 /config /blackhole /sorted /unsorted && \
-    chgrp -R users /blackhole /unsorted /sorted
-RUN chown -R sickrage:users /config /app
+    chgrp -R users /blackhole /unsorted /sorted && \
+	chown -R sickrage:users /config /app
 
 # Continue as user sickrage
 USER sickrage
