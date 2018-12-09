@@ -1,4 +1,8 @@
 # rpi-alpine-sickrage
+
+# DEPRECATED: Please use https://hub.docker.com/r/lsioarmhf/medusa/ instead
+
+
 [![Build Status](https://travis-ci.org/koukihai/rpi-alpine-sickrage.svg?branch=master)](https://travis-ci.org/koukihai/rpi-alpine-sickrage)
 
 [Sickrage](https://sickrage.github.io/) is an automatic Video Library Manager for TV Shows.  
